@@ -6,6 +6,7 @@
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
+\usepackage{textcomp}
 
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
@@ -30,18 +31,18 @@ Problemem badawczym postawionym w niniejszej pracy jest prognoza obciążenia pa
 \section{Model}
 Modele zostały zbudowane przy wykorzystaniu algorytmu Drzewa Decyzyjnego ($https://scikit-learn.org/stable/auto_examples/tree/plot_tree_regression.html$). Kod dla obu modeli jest dostępny jako załącznik nr 2.\\
 \\
-Pierwszy wykres sporządzony został na podstawie wszystkich możliwych danych, które były dostępne. Zaobserwować można fakt, że jest on stosunkowo płaski i zdecydowanie mniej zróżnicowany niż posiadane dane (przy obu parametrach $n_estimators$). Parametr$ n_estimators$ świadczy o tym, na ile części dane są dzielone, a następnie algorytm z każdej takiej pojedynczej części oblicza regresję liniową. Oznacza to, że im mniejsza wartość $n_estimators$, tym na mniej części dane są dzielone.\\
+Pierwszy wykres sporządzony został na podstawie wszystkich możliwych danych, które były dostępne. Zaobserwować można fakt, że jest on stosunkowo płaski i zdecydowanie mniej zróżnicowany niż posiadane dane (przy obu parametrach $n\_estimators$). Parametr $n\_estimators$ świadczy o tym, na ile części dane są dzielone, a następnie algorytm z każdej takiej pojedynczej części oblicza regresję liniową. Oznacza to, że im mniejsza wartość $n\_estimators$, tym na mniej części dane są dzielone.\\
 \\
-\includegraphics[width=8cm]{image-0}\\
+\includegraphics[width=12cm]{image-0}\\
 \\
-Kolejnymi zbudowanymi modelami (dla dwóch wartości $n_estimators$) są widoczne na poniższym wykresie linie zielona i czerwona. Zbudowane one zostały na podstawie tylko i wyłącznie dostępnych danych z sobót. \\
+Kolejnymi zbudowanymi modelami (dla dwóch wartości $n\_estimators$) są widoczne na poniższym wykresie linie zielona i czerwona. Zbudowane one zostały na podstawie tylko i wyłącznie dostępnych danych z sobót. \\
 \\
-\includegraphics[width=8cm]{image-1}\\
+\includegraphics[width=12cm]{image-1}\\
 \\
 \section{Analiza porównawcza}
-Zbudowanie powyższych modeli przy użyciu Drzewa decyzyjnego nie było trafnym pomysłem. Nie nadaje się ono do rozwiązania postawionego problemu, czyli prognozy przyszłego obciążenia parkingu. Aby możliwa była predykcja, koniecznym byłoby poznanie funkcji będącej modelem danych. W tym przypadku takowych modeli jest wiele funkcji (osobno dla każdego przedziału determinowanego przez parametr $n_estimators$) .\\
+Zbudowanie powyższych modeli przy użyciu Drzewa decyzyjnego nie było trafnym pomysłem. Nie nadaje się ono do rozwiązania postawionego problemu, czyli prognozy przyszłego obciążenia parkingu. Aby możliwa była predykcja, koniecznym byłoby poznanie funkcji będącej modelem danych. W tym przypadku takowych modeli jest wiele funkcji (osobno dla każdego przedziału determinowanego przez parametr $n\_estimator$) .\\
 \\
-Jednakże warto wspomnieć inną cechę wspomnianego parametru. W przypadku mocno zróżnicowanych danych, na które wpływ miały różne szumy, zmniejszając $n_estimators$, zmniejszamy jednocześnie wrażliwość modelu na zakłócenia. Zjawisko to jest zdecydowanie uwidocznione w przypadku pierwszego modelu, gdzie mimo dużego zróżnicowania danych, modele są wypłaszczone.
+Jednakże warto wspomnieć inną cechę wspomnianego parametru. W przypadku mocno zróżnicowanych danych, na które wpływ miały różne szumy, zmniejszając $n\_estimators$, zmniejszamy jednocześnie wrażliwość modelu na zakłócenia. Zjawisko to jest zdecydowanie uwidocznione w przypadku pierwszego modelu, gdzie mimo dużego zróżnicowania danych, modele są wypłaszczone.
 
 \section{Podsumowanie}
 Podsumowując, zastosowanie Drzewa decyzyjnego nie nadaje się do tworzenia prognozy.
