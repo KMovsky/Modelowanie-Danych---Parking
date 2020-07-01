@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import AdaBoostRegressor
 
-filepath = 'datasetSoboty.txt'
+filepath = 'dataset-soboty.csv'
 
 datafile = open(filepath, 'r')
 lines=datafile.readlines()

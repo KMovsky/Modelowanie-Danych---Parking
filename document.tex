@@ -26,10 +26,10 @@ Norbert Sulżycki\\
 
 
 \section{Problem badawczy}
-Problemem badawczym postawionym w niniejszej pracy jest prognoza obciążenia parkingu samochodowego umieszczonego w Birningham, UK (regresja). Dane wykorzystane w projekcie zostały zaczerpnięte ze strony\\ $https://archive.ics.uci.edu/ml/datasets/Parking+Birmingham$ (załącznik nr 1).
+Problemem badawczym postawionym w niniejszej pracy jest prognoza obciążenia parkingu samochodowego umieszczonego w Birningham, UK (regresja). Dane wykorzystane w projekcie zostały zaczerpnięte ze strony\\ $https://archive.ics.uci.edu/ml/datasets/Parking+Birmingham$ (plik: $dataset.csv$ zawiera wszystkie dane na temat wszystkich paringów). Ze wskazanych danych zostały wydzielone dotyczące tylko jednego prakingu $BHMBCCMKT01$ jako osobny plik (plik: $dataset-parking.csv$), następnie wydzielone zostały wszystkie dane dotyczące sobót dla tego parkingu (plik: $dataset-soboty.csv$).
 
 \section{Model}
-Modele zostały zbudowane przy wykorzystaniu algorytmu Drzewa Decyzyjnego ($https://scikit-learn.org/stable/auto_examples/tree/plot_tree_regression.html$). Kod dla obu modeli jest dostępny jako załącznik nr 2.\\
+Modele zostały zbudowane przy wykorzystaniu algorytmu Drzewa Decyzyjnego ($https://scikit-learn.org/stable/auto_examples/tree/plot_tree_regression.html$). Kod dla obu modeli jest dostępny jako dwa osobne algorytmy (plik: $modelowanie.py$ oraz $parking.py$).\\
 \\
 Pierwszy wykres sporządzony został na podstawie wszystkich możliwych danych, które były dostępne. Zaobserwować można fakt, że jest on stosunkowo płaski i zdecydowanie mniej zróżnicowany niż posiadane dane (przy obu parametrach $n\_estimators$). Parametr $n\_estimators$ świadczy o tym, na ile części dane są dzielone, a następnie algorytm z każdej takiej pojedynczej części oblicza regresję liniową. Oznacza to, że im mniejsza wartość $n\_estimators$, tym na mniej części dane są dzielone.\\
 \\
